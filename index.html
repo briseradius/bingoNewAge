@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bingo Complotisme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Bingo Complotisme</h1>
+      <div class="controls">
+        <button id="shuffle" class="primary" title="Mélanger la grille">Mélanger</button>
+        <button id="reset" class="warning" title="Réinitialiser les cases">Réinitialiser</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div id="board" class="board" role="grid" aria-label="Grille de bingo 5 par 5"></div>
+    </section>
+
+    <p class="footer">
+      <span class="legend">
+        <span class="dot"></span> Non cochée &nbsp;•&nbsp; 
+        <span class="dot on"></span> Cochée
+      </span>
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
