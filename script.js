@@ -16,6 +16,8 @@ const unselectSound = new Audio("sounds/unselect.mp3");
 selectSound.volume = 0.7;
 unselectSound.volume = 0.7;
 
+let currentSoundboard = null;
+
 const STORAGE_KEY = "bingo-complotisme-v1";
 const state = { items: [], selected: new Set() };
 
@@ -42,7 +44,6 @@ function save() {
 function load() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-
     if (!raw) return false;
 
     const data = JSON.parse(raw);
@@ -103,6 +104,22 @@ function toggle(idx, el) {
   save();
 }
 
+function playSoundboard() {
+  const select = document.getElementById("soundboardSelect");
+  const src = select.value;
+
+  if (!src) return;
+
+  if (currentSoundboard) {
+    currentSoundboard.pause();
+    currentSoundboard.currentTime = 0;
+  }
+
+  currentSoundboard = new Audio(src);
+  currentSoundboard.volume = 0.5;
+  currentSoundboard.play().catch(() => {});
+}
+
 function reset() {
   state.selected.clear();
   save();
@@ -134,4 +151,5 @@ function shuffleBoard() {
 
   document.getElementById("reset").addEventListener("click", reset);
   document.getElementById("shuffle").addEventListener("click", shuffleBoard);
+  document.getElementById("playSoundboard").addEventListener("click", playSoundboard);
 })();

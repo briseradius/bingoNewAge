@@ -29,11 +29,15 @@ body {
 
 header {
   display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 12px;
+  flex-wrap: wrap; gap: 5px;
   background: linear-gradient(180deg, var(--panel), var(--panel-2));
   padding: 16px 18px; border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
   opacity: 0.95; animation: fadeIn 0.5s ease forwards;
+}
+.center {
+  text-align: center; display: flex; justify-content: center;
+  align-items: center; gap: 8px;
 }
 header h1 { 
 font-size: clamp(1.1rem, 2vw + .6rem, 1.6rem); margin: 0; 
@@ -97,4 +101,54 @@ button.warning {
 
 @media (max-width: 700px) {
   .tile { min-height: 74px; padding: 12px; font-size: .95rem; }
+}
+.controls {
+  align-items: center;
+}
+
+.controls label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#soundboardSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: var(--tile);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 10px 40px 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23e5e7eb' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+#soundboardSelect:hover {
+  background-color: #11182a;
+  border-color: rgba(255,255,255,.18);
+}
+
+#soundboardSelect:focus {
+  outline: none;
+  border-color: rgba(34,197,94,.65);
+  box-shadow: 0 0 0 2px rgba(34,197,94,.25), 0 6px 20px rgba(0,0,0,.25);
+}
+
+#playSoundboard {
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  border-color: transparent;
+  color: #062b16;
+}
+
+#playSoundboard:hover {
+  background: linear-gradient(180deg, #34d399, var(--accent));
 }
