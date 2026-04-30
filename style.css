@@ -156,8 +156,11 @@ button.warning {
 @media (max-width: 900px) {
   .board {
     grid-template-columns: repeat(3, 1fr);
-      background-image: url('sheepQueen.png');
-      background-repeat: repeat;
+  }
+    body {
+    background-image: url('sheepQueen.png');
+    background-repeat: repeat;
+    background-size: cover;
   }
 }
 
@@ -165,14 +168,20 @@ button.warning {
 @media (max-width: 600px) {
   .board {
     grid-template-columns: repeat(2, 1fr);
-      background-image: url('sheepQueen.png');
-      background-repeat: repeat;
+  }
+    body {
+    background-image: url('sheepQueen.png');
+    background-repeat: repeat;
+    background-size: cover;
   }
 }
 @media (max-width: 420px) {
   .board {
     grid-template-columns: repeat(1, 1fr);
-      background-image: url('sheepQueen.png');
-      background-repeat: repeat;
+  }
+  body {
+    background-image: url('sheepQueen.png');
+    background-repeat: repeat;
+    background-size: cover;
   }
 }
