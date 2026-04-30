@@ -152,3 +152,27 @@ button.warning {
 #playSoundboard:hover {
   background: linear-gradient(180deg, #34d399, var(--accent));
 }
+/* Tablette */
+@media (max-width: 900px) {
+  .board {
+    grid-template-columns: repeat(3, 1fr);
+      background-image: url('sheepQueen.png');
+      background-repeat: repeat;
+  }
+}
+
+/* Téléphone */
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+      background-image: url('sheepQueen.png');
+      background-repeat: repeat;
+  }
+}
+@media (max-width: 420px) {
+  .board {
+    grid-template-columns: repeat(1, 1fr);
+      background-image: url('sheepQueen.png');
+      background-repeat: repeat;
+  }
+}
